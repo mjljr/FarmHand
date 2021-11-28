@@ -13,7 +13,7 @@ async function chromeSettings() {
 }
 
 $(document).ready(function() {
-    let imgArrow=chrome.runtime.getURL("img/arrow-up.svg");
+    let imgArrow=chrome.runtime.getURL('img/arrow-up.svg');
     let menuFull = '';
     const menuTop =
     '<ul>\
@@ -102,7 +102,7 @@ $(document).ready(function() {
     menuFull += menuTqlBottom;
     menuFull += menuBottom;
 
-    $(".list-block:eq(2)").append(menuFull);
+    $('.list-block').eq(2).append(menuFull);
     
     document.querySelector('#go-to-options').addEventListener('click', function() {
         if (chrome.runtime.openOptionsPage) {
@@ -111,4 +111,23 @@ $(document).ready(function() {
         window.open(chrome.runtime.getURL('options.html'));
         }
     });
+
+    if (fhOpt.chatNotif) {
+        // Case insensitive :contains function
+        // https://css-tricks.com/snippets/jquery/make-jquery-contains-case-insensitive/
+        $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+            return function(elem) {
+                return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+            };
+        });
+        const atUsername = '@' + fhOpt.chatUsername;
+        var target = document.querySelector('div#chatzoneDesktop');
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                $('div.chat-txt:contains('+atUsername+')').css("background-color", fhOpt.chatColor);
+            });
+        });
+        var config = {attributes: true, childList: true, characterData: true, subtree:true};
+        observer.observe(target, config);
+    }
 });

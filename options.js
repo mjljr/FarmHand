@@ -1,5 +1,9 @@
 // Saves options to chrome.storage
 function save_options() {
+    var chatUsername = document.getElementById('chatUsername').value;
+    var chatColor = document.getElementById('chatColor').value;
+    var chatNotif = document.getElementById('chatNotif').checked;
+
     var fqlFarmId = document.getElementById('fqlFarmId').value;
     var fqlFarm = document.getElementById('fqlFarm').checked;
     var fqlExplore = document.getElementById('fqlExplore').checked;
@@ -14,6 +18,10 @@ function save_options() {
     var tqlSteakMarket = document.getElementById('tqlSteakMarket').checked;
     var tqlWell = document.getElementById('tqlWell').checked;
     chrome.storage.sync.set({
+        // Chat settings
+        chatUsername: chatUsername,
+        chatColor: chatColor,
+        chatNotif: chatNotif,
         // Farm quick links settings
         fqlFarmId: fqlFarmId,
         fqlFarm: fqlFarm,
@@ -44,6 +52,9 @@ function save_options() {
 function restore_options() {
     // Default values
     chrome.storage.sync.get({
+        chatUsername: 'null',
+        chatColor: '#333',
+        chatNotif: false,
         fqlFarmId: '0',
         fqlFarm: false,
         fqlExplore: true,
@@ -58,6 +69,9 @@ function restore_options() {
         tqlSteakMarket: true,
         tqlWell: true
     }, function(items) {
+        document.getElementById('chatUsername').value = items.chatUsername;
+        document.getElementById('chatColor').value = items.chatColor;
+        document.getElementById('chatNotif').checked = items.chatNotif;
         document.getElementById('fqlFarmId').value = items.fqlFarmId;
         document.getElementById('fqlFarm').checked = items.fqlFarm;
         document.getElementById('fqlExplore').checked = items.fqlExplore;
