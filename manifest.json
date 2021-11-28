@@ -1,6 +1,6 @@
 {
   "name": "FarmHand",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "manifest_version": 3,
   "description": "General QoL enhancements to the FarmRPG UI",
   "options_ui": {
