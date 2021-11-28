@@ -1,0 +1,105 @@
+fh-title1 {
+    color: #fff;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+}
+
+fh-title2 {
+    color: #c84327;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+}
+
+button#go-to-options{
+    background-color: #c84327;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+hr.fh-menu {
+    height: 1px;
+    padding: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 1px solid #393939;
+}
+
+.list-block .item-inner-ext {
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    min-height: 44px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    overflow: hidden;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+
+/* Built from: https://dev.to/jordanfinners/creating-a-collapsible-section-with-nothing-but-html-4ip9 */
+details {
+    user-select: none;
+    box-sizing: border-box;
+    padding-left: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+  
+details>summary span.icon {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s;
+    margin-left: auto;
+}
+
+details>summary span.spacer {
+    width: 8px;
+    height: 8px;
+    margin: 0px;
+}
+  
+details[open] summary span.icon {
+    transform: rotate(180deg);
+}
+  
+summary {
+    display: flex;
+    cursor: pointer;
+}
+  
+summary::-webkit-details-marker {
+    display: none;
+}

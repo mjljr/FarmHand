@@ -1,0 +1,28 @@
+{
+  "name": "FarmHand",
+  "version": "1.1.1",
+  "manifest_version": 3,
+  "description": "General QoL enhancements to the FarmRPG UI",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "run_at" :"document_end",
+      "matches": ["https://farmrpg.com/*"],
+      "css":["css/style.css"],
+      "js": ["thirdParty/jquery-3.6.0.min.js","farmhand.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "img/*.svg", "options.html" ],
+      "matches": [ "https://farmrpg.com/*" ]
+    }
+  ]
+}
