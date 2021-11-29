@@ -10,6 +10,7 @@ function save_options() {
     var fqlFishing = document.getElementById('fqlFishing').checked;
     var fqlWorkshop = document.getElementById('fqlWorkshop').checked;
 
+    var tqlBank = document.getElementById('tqlBank').checked;
     var tqlStore = document.getElementById('tqlStore').checked;
     var tqlMarket = document.getElementById('tqlMarket').checked;
     var tqlPetShop = document.getElementById('tqlPetShop').checked;
