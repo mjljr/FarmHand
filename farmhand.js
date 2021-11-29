@@ -22,7 +22,7 @@ $(document).ready(function() {
     </li>\
     ';
 
-    let menuFqlTop = '<details><summary>Farm Quick Links<span class="icon"><img src="'+imgArrow+'"width="22" height="22"></span><span class="spacer"></span></summary></div>';
+    const menuFqlTop = '<details><summary>Farm Quick Links<span class="icon"><img src="'+imgArrow+'"width="22" height="22"></span><span class="spacer"></span></summary></div>';
     const menuFqlBottom = '</details><hr class="fh-menu">';
 
     const fqlFarm =
