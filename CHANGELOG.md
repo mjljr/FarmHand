@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.0] - 2021-12-07
+
+FarmHand is now live on the Chrome Web Store and Edge Add-ons!
+ 
+### Added
+- Community Center quick link
+- Help Needed quick link
+
+### Changed
+- Drop menus don't show up unless they have one quick link enabled
+- Code refactor for handling HTML menu builds
+ 
+### Fixed
+
+
 ## [1.3.1] - 2021-11-28
  
 ### Added
@@ -11,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
  
 ### Fixed
-- Bug with `Bank Quick Link` option not saving
+- Bug with `Bank quick link` option not saving
 
 ## [1.3.0] - 2021-11-28
  
@@ -38,8 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Initial public release
  
 ### Added
-- Farm Quick Links
-- Town Quick Links
+- Farm quick links
+- Town quick links
    
 ### Changed
  
