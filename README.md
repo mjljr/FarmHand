@@ -10,7 +10,7 @@ FarmHand is a Chrome extension for General QoL enhancements to the FarmRPG UI. A
 
 ### Development
 
-To work on development for the addon, download the latest release from GitHub and do the following:
+To work on development for the addon, pull the latest code from GitHub and do the following:
 
 1. Extract the contents into a `FarmHand` named folder anywhere
 2. chrome://extensions/
