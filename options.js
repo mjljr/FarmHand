@@ -8,6 +8,7 @@ function save_options() {
     var fqlFarm = document.getElementById('fqlFarm').checked;
     var fqlExplore = document.getElementById('fqlExplore').checked;
     var fqlFishing = document.getElementById('fqlFishing').checked;
+    var fqlQuests = document.getElementById('fqlQuests').checked;
     var fqlWorkshop = document.getElementById('fqlWorkshop').checked;
 
     var tqlBank = document.getElementById('tqlBank').checked;
@@ -18,6 +19,7 @@ function save_options() {
     var tqlPostOffice = document.getElementById('tqlPostOffice').checked;
     var tqlSteakMarket = document.getElementById('tqlSteakMarket').checked;
     var tqlWell = document.getElementById('tqlWell').checked;
+    var tqlCommunity = document.getElementById('tqlCommunity').checked;
     chrome.storage.sync.set({
         // Chat settings
         chatUsername: chatUsername,
@@ -28,6 +30,7 @@ function save_options() {
         fqlFarm: fqlFarm,
         fqlExplore: fqlExplore,
         fqlFishing: fqlFishing,
+        fqlQuests: fqlQuests,
         fqlWorkshop: fqlWorkshop,
         // Town quick links settings
         tqlBank: tqlBank,
@@ -37,7 +40,8 @@ function save_options() {
         tqlPetItemCollect: tqlPetItemCollect,
         tqlPostOffice: tqlPostOffice,
         tqlSteakMarket: tqlSteakMarket,
-        tqlWell: tqlWell
+        tqlWell: tqlWell,
+        tqlCommunity: tqlCommunity
     }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
@@ -60,6 +64,7 @@ function restore_options() {
         fqlFarm: false,
         fqlExplore: true,
         fqlFishing: true,
+        fqlQuests: false,
         fqlWorkshop: true,
         tqlBank: true,
         tqlStore: true,
@@ -68,7 +73,8 @@ function restore_options() {
         tqlPetItemCollect: false,
         tqlPostOffice: true,
         tqlSteakMarket: true,
-        tqlWell: true
+        tqlWell: true,
+        tqlCommunity: false
     }, function(items) {
         document.getElementById('chatUsername').value = items.chatUsername;
         document.getElementById('chatColor').value = items.chatColor;
@@ -77,6 +83,7 @@ function restore_options() {
         document.getElementById('fqlFarm').checked = items.fqlFarm;
         document.getElementById('fqlExplore').checked = items.fqlExplore;
         document.getElementById('fqlFishing').checked = items.fqlFishing;
+        document.getElementById('fqlQuests').checked = items.fqlQuests;
         document.getElementById('fqlWorkshop').checked = items.fqlWorkshop;
         document.getElementById('tqlBank').checked = items.tqlBank;
         document.getElementById('tqlStore').checked = items.tqlStore;
@@ -86,6 +93,7 @@ function restore_options() {
         document.getElementById('tqlPostOffice').checked = items.tqlPostOffice;
         document.getElementById('tqlSteakMarket').checked = items.tqlSteakMarket;
         document.getElementById('tqlWell').checked = items.tqlWell;
+        document.getElementById('tqlCommunity').checked = items.tqlCommunity;
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);

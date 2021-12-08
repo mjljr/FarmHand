@@ -4,13 +4,21 @@ FarmHand is a Chrome extension for General QoL enhancements to the FarmRPG UI. A
 
 ## Installation
 
-This extension is currently in development and is not available on the Google Chrome extension store. If you want to try it out, download the latest release from GitHub and do the following:
+### Regular Use
+- [Download FarmHand from the Chrome Web Store](https://chrome.google.com/webstore/detail/farmhand/hdedjdjgpkininbdiaablppipboeaapf)
+- [Download FarmHand from Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/farmhand/nmpgdfapgmlncbcpabiahandoeddannh)
+
+### Development
+
+To work on development for the addon, pull the latest code from GitHub and do the following:
 
 1. Extract the contents into a `FarmHand` named folder anywhere
-1. chrome://extensions/
-1. Enable Developer Mode
-1. Load unpacked extension (point to the FarmHand directory you unzipped)
-1. After it's installed, refresh FarmRPG. NOTE: You won't have any quick links til you set options
+2. chrome://extensions/
+3. Enable Developer Mode
+4. Load unpacked extension (point to the FarmHand directory you unzipped)
+5. After it's installed, refresh FarmRPG. NOTE: You won't have any quick links til you set options
+
+Make your changes, test, and submit a pull request.
 
 ## Configuring Extension Options
 
@@ -29,33 +37,37 @@ Change FarmHand's settings by clicking the `FarmHand Options` button in the brow
 
 - Farm ID
   - This is the ID of your farm. You'll need to get the number from the URL by going to `Home > My Farm`
-- Farm Quick Link
+- Farm quick link
   - Direct link to `My Farm` (requires correct Farm ID)
-- Explore Quick Link
+- Explore quick link
   - Direct link to Exploring
-- Fishing Quick Link
+- Fishing quick link
   - Direct link to Fishing
-- Workshop Quick Link
+- Help Needed quick link
+  - Direct link to Help Needed
+- Workshop quick link
   - Direct link to the Workshop
 
 ### Town Quick Links
 
-- Bank Quick Link
+- Bank quick link
   - Direct link to the Bank
-- Country Store Quick Link
+- Country Store quick link
   - Direct link to the Country Store
-- Farmer's Market Quick Link
+- Farmer's Market quick link
   - Direct link to the Farmer's Market
-- Pet Shop Quick Link
+- Pet Shop quick link
   - Direct link to the Pet Shop
-- Pet Item Collection Quick Link
+- Pet Item Collection quick link
   - Direct link to collect all pet items (requires the gold upgrade to be purchased)
-- Post Office Quick Link
+- Post Office quick link
   - Direct link to the Post Office
-- Steak Market Quick Link
+- Steak Market quick link
   - Direct link to the Steak Market
-- Wishing Well Quick Link
+- Wishing Well quick link
   - Direct link to the Wishing Well
+- Community Center quick link
+  - Direct link to the Community Center
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

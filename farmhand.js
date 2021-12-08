@@ -12,19 +12,34 @@ async function chromeSettings() {
     return fhOpt;
 }
 
-$(document).ready(function() {
-    let imgArrow=chrome.runtime.getURL('img/arrow-up.svg');
-    let menuFull = '';
-    const menuTop =
-    '<ul>\
-    <li>\
-    <div class="item-content"><div class="item-inner-ext"><fh-title1>Farm</fh-title1><fh-title2>Hand</fh-title2></div></div>\
-    </li>\
-    ';
+function menuBuildCheck(menuType = '') {
+    // Filter for options keys that don't have false values
+    var optKeys = Object.keys(fhOpt);
+    var filteredOpt = optKeys.filter(function(x) {
+        return fhOpt[x];
+    });
 
+    // Remove fqlFarmId key if it exists as it has no relevance to this check
+    const index = filteredOpt.indexOf("fqlFarmId");
+    if (index > -1) {
+        filteredOpt.splice(index, 1);
+    }
+
+    // Return true/false based on keys matching menu type string
+    const optStatus = filteredOpt.some(r=>r.includes(menuType));
+    return optStatus;
+}
+
+function buildFarmLinks(imgArrow) {
+    let fqlBuild = '';
+    if(!(menuBuildCheck('fql'))) {
+        // No need to build the menu
+        return fqlBuild;
+    }
+
+    // Menu HTML
     const menuFqlTop = '<details><summary>Farm Quick Links<span class="icon"><img src="'+imgArrow+'"width="22" height="22"></span><span class="spacer"></span></summary></div>';
     const menuFqlBottom = '</details><hr class="fh-menu">';
-
     const fqlFarm =
     '<li>\
     <a href="xfarm.php?id='+fhOpt.fqlFarmId+'" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">My Farm</div></div></div></a>\
@@ -37,14 +52,37 @@ $(document).ready(function() {
     '<li>\
     <a href="fish.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Fishing</div></div></div></a>\
     </li>';
+    const fqlQuests =
+    '<li>\
+    <a href="quests.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Help Needed</div></div></div></a>\
+    </li>';
     const fqlWorkshop =
     '<li>\
     <a href="workshop.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Workshop</div></div></div></a>\
     </li>';
 
+    // Build Farm quick links menu
+    fqlBuild += menuFqlTop;
+    if(fhOpt.fqlFarm) { fqlBuild += fqlFarm; }
+    if(fhOpt.fqlExplore) { fqlBuild += fqlExplore; }
+    if(fhOpt.fqlFishing) { fqlBuild += fqlFishing; }
+    if(fhOpt.fqlQuests) { fqlBuild += fqlQuests; }
+    if(fhOpt.fqlWorkshop) { fqlBuild += fqlWorkshop; }
+    fqlBuild += menuFqlBottom;
+
+    return fqlBuild;
+}
+
+function buildTownLinks(imgArrow) {
+    let tqlBuild = '';
+    if(!(menuBuildCheck('tql'))) {
+        // No need to build the menu
+        return tqlBuild;
+    }
+
+    // Menu HTML
     const menuTqlTop = '<details><summary>Town Quick Links<span class="icon"><img src="'+imgArrow+'"width="22" height="22"></span><span class="spacer"></span></summary></div>';
     const menuTqlBottom = '</details><hr class="fh-menu">';
-
     const tqlBank =
     '<li>\
     <a href="bank.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Bank</div></div></div></a>\
@@ -76,7 +114,36 @@ $(document).ready(function() {
     '<li>\
     <a href="well.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Wishing Well</div></div></div></a>\
     </li>';
+    const tqlCommunity =
+    '<li>\
+    <a href="comm.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Community Center</div></div></div></a>\
+    </li>';
+    
+    // Build Town quick links menu
+    tqlBuild += menuTqlTop;
+    if(fhOpt.tqlBank) { tqlBuild += tqlBank; }
+    if(fhOpt.tqlStore) { tqlBuild += tqlStore; }
+    if(fhOpt.tqlMarket) { tqlBuild += tqlMarket; }
+    if(fhOpt.tqlPetShop) { tqlBuild += tqlPetShop; }
+    if(fhOpt.tqlPetItemCollect) { tqlBuild += tqlPetItemCollect; }
+    if(fhOpt.tqlPostOffice) { tqlBuild += tqlPostOffice; }
+    if(fhOpt.tqlSteakMarket) { tqlBuild += tqlSteakMarket; }
+    if(fhOpt.tqlWell) { tqlBuild += tqlWell; }
+    if(fhOpt.tqlCommunity) { tqlBuild += tqlCommunity; }
+    tqlBuild += menuTqlBottom;
 
+    return tqlBuild;
+}
+
+$(document).ready(function() {
+    let imgArrow=chrome.runtime.getURL('img/arrow-up.svg');
+    let menuFull = '';
+    const menuTop =
+    '<ul>\
+    <li>\
+    <div class="item-content"><div class="item-inner-ext"><fh-title1>Farm</fh-title1><fh-title2>Hand</fh-title2></div></div>\
+    </li>\
+    ';
     const menuBottom =
     '<div class="item-content"><div class="item-inner-ext"><button id="go-to-options">FarmHand Options</button></div></div>\
     </ul>\
@@ -84,22 +151,8 @@ $(document).ready(function() {
 
     // Build FarmHand Menu
     menuFull += menuTop;
-    menuFull += menuFqlTop;
-    if(fhOpt.fqlFarm) { menuFull += fqlFarm; }
-    if(fhOpt.fqlExplore) { menuFull += fqlExplore; }
-    if(fhOpt.fqlFishing) { menuFull += fqlFishing; }
-    if(fhOpt.fqlWorkshop) { menuFull += fqlWorkshop; }
-    menuFull += menuFqlBottom;
-    menuFull += menuTqlTop;
-    if(fhOpt.tqlBank) { menuFull += tqlBank; }
-    if(fhOpt.tqlStore) { menuFull += tqlStore; }
-    if(fhOpt.tqlMarket) { menuFull += tqlMarket; }
-    if(fhOpt.tqlPetShop) { menuFull += tqlPetShop; }
-    if(fhOpt.tqlPetItemCollect) { menuFull += tqlPetItemCollect; }
-    if(fhOpt.tqlPostOffice) { menuFull += tqlPostOffice; }
-    if(fhOpt.tqlSteakMarket) { menuFull += tqlSteakMarket; }
-    if(fhOpt.tqlWell) { menuFull += tqlWell; }
-    menuFull += menuTqlBottom;
+    menuFull += buildFarmLinks(imgArrow);
+    menuFull += buildTownLinks(imgArrow);
     menuFull += menuBottom;
 
     $('.list-block').eq(2).append(menuFull);
