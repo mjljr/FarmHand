@@ -6,11 +6,10 @@ function save_options() {
 
     var fqlFarmId = document.getElementById('fqlFarmId').value;
     var fqlFarm = document.getElementById('fqlFarm').checked;
-    var fqlWorkshop = document.getElementById('fqlWorkshop').checked;
+    var fqlCraftworks = document.getElementById('fqlCraftworks').checked;
     var fqlFishing = document.getElementById('fqlFishing').checked;
     var fqlExplore = document.getElementById('fqlExplore').checked;
     var fqlQuests = document.getElementById('fqlQuests').checked;
-    var fqlCraftworks = document.getElementById('fqlCraftworks').checked;
     var fqlRaptor = document.getElementById('fqlRaptor').checked;
 
     var tqlStore = document.getElementById('tqlStore').checked;
@@ -34,11 +33,10 @@ function save_options() {
         // Farm quick links settings
         fqlFarmId: fqlFarmId,
         fqlFarm: fqlFarm,
-        fqlWorkshop: fqlWorkshop,
+        fqlCraftworks: fqlCraftworks,
         fqlFishing: fqlFishing,
         fqlExplore: fqlExplore,
         fqlQuests: fqlQuests,
-        fqlCraftworks: fqlCraftworks,
         fqlRaptor: fqlRaptor,
         // Town quick links settings
         tqlStore: tqlStore,
@@ -74,11 +72,10 @@ function restore_options() {
         chatNotif: false,
         fqlFarmId: '0',
         fqlFarm: false,
-        fqlWorkshop: true,
+        fqlCraftworks: false,
         fqlFishing: true,
         fqlExplore: true,
         fqlQuests: false,
-        fqlCraftworks: false,
         fqlRaptor: false,
         tqlStore: true,
         tqlMarket: true,
@@ -100,13 +97,11 @@ function restore_options() {
         document.getElementById('chatNotif').checked = items.chatNotif;
         document.getElementById('fqlFarmId').value = items.fqlFarmId;
         document.getElementById('fqlFarm').checked = items.fqlFarm;
-        document.getElementById('fqlWorkshop').checked = items.fqlWorkshop;
+        document.getElementById('fqlCraftworks').checked = items.fqlCraftworks;
         document.getElementById('fqlFishing').checked = items.fqlFishing;
         document.getElementById('fqlExplore').checked = items.fqlExplore;
         document.getElementById('fqlQuests').checked = items.fqlQuests;
-        document.getElementById('fqlCraftworks').checked = items.fqlCraftworks;
         document.getElementById('fqlRaptor').checked = items.fqlRaptor;
-
         
         document.getElementById('tqlStore').checked = items.tqlStore;
         document.getElementById('tqlMarket').checked = items.tqlMarket;

@@ -44,9 +44,9 @@ function buildFarmLinks(imgArrow) {
     '<li>\
     <a href="xfarm.php?id='+fhOpt.fqlFarmId+'" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">My Farm</div></div></div></a>\
     </li>';
-    const fqlWorkshop =
+    const fqlCraftworks = 
     '<li>\
-    <a href="workshop.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Workshop</div></div></div></a>\
+    <a href="craftworks.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Craftworks</div></div></div></a>\
     </li>';
     const fqlFishing =
     '<li>\
@@ -60,10 +60,6 @@ function buildFarmLinks(imgArrow) {
     '<li>\
     <a href="quests.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Help Needed</div></div></div></a>\
     </li>';
-    const fqlCraftworks = 
-    '<li>\
-    <a href="craftworks.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Craftworks</div></div></div></a>\
-    </li>';
     const fqlRaptor =
     '<li>\
     <a href="pen.php?id='+fhOpt.fqlFarmId+'" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Raptor Pen</div></div></div></a>\
@@ -72,11 +68,10 @@ function buildFarmLinks(imgArrow) {
     // Build Farm quick links menu
     fqlBuild += menuFqlTop;
     if(fhOpt.fqlFarm) { fqlBuild += fqlFarm; }
-    if(fhOpt.fqlWorkshop) { fqlBuild += fqlWorkshop; }
+    if(fhOpt.fqlCraftworks) { fqlBuild +=fqlCraftworks }
     if(fhOpt.fqlFishing) { fqlBuild += fqlFishing; }
     if(fhOpt.fqlExplore) { fqlBuild += fqlExplore; }
     if(fhOpt.fqlQuests) { fqlBuild += fqlQuests; }
-    if(fhOpt.fqlCraftworks) { fqlBuild +=fqlCraftworks }
     if(fhOpt.fqlRaptor) { fqlBuild += fqlRaptor; }
     fqlBuild += menuFqlBottom;
 
