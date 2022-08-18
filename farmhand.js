@@ -132,6 +132,10 @@ function buildTownLinks(imgArrow) {
     `<li>\
     <a href="locksmith.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Locksmith</div></div></div></a>\
     </li>`;
+    const tqlVault =
+    '<li>\
+    <a href="crack.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">The Vault</div></div></div></a>\
+    </li>';
     
     // Build Town quick links menu
     tqlBuild += menuTqlTop;
@@ -145,6 +149,7 @@ function buildTownLinks(imgArrow) {
     if(fhOpt.tqlWell) { tqlBuild += tqlWell; }
     if(fhOpt.tqlCommunity) { tqlBuild += tqlCommunity; }
     if(fhOpt.tqlLocksmith) { tqlBuild += tqlLocksmith; }
+    if (fhOpt.tqlVault) { tqlBuild += tqlVault; }
 
     tqlBuild += menuTqlBottom;
 
