@@ -10,6 +10,7 @@ function save_options() {
     var fqlFishing = document.getElementById('fqlFishing').checked;
     var fqlExplore = document.getElementById('fqlExplore').checked;
     var fqlQuests = document.getElementById('fqlQuests').checked;
+    var fqlTower = document.getElementById('fqlTower').checked;
     var fqlRaptor = document.getElementById('fqlRaptor').checked;
 
     var tqlStore = document.getElementById('tqlStore').checked;
@@ -38,6 +39,7 @@ function save_options() {
         fqlFishing: fqlFishing,
         fqlExplore: fqlExplore,
         fqlQuests: fqlQuests,
+        fqlTower: fqlTower,
         fqlRaptor: fqlRaptor,
         // Town quick links settings
         tqlStore: tqlStore,
@@ -78,6 +80,7 @@ function restore_options() {
         fqlFishing: true,
         fqlExplore: true,
         fqlQuests: false,
+        fqlTower: false,
         fqlRaptor: false,
         tqlStore: true,
         tqlMarket: true,
@@ -104,8 +107,8 @@ function restore_options() {
         document.getElementById('fqlFishing').checked = items.fqlFishing;
         document.getElementById('fqlExplore').checked = items.fqlExplore;
         document.getElementById('fqlQuests').checked = items.fqlQuests;
+        document.getElementById('fqlTower').checked = items.fqlTower;
         document.getElementById('fqlRaptor').checked = items.fqlRaptor;
-        
         document.getElementById('tqlStore').checked = items.tqlStore;
         document.getElementById('tqlMarket').checked = items.tqlMarket;
         document.getElementById('tqlBorgen').checked = items.tqlBorgen;

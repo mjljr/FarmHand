@@ -60,6 +60,10 @@ function buildFarmLinks(imgArrow) {
     '<li>\
     <a href="quests.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Help Needed</div></div></div></a>\
     </li>';
+    const fqlTower = 
+    '<li>\
+    <a href="tower.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">The Tower</div></div></div></a>\
+    </li>';
     const fqlRaptor =
     '<li>\
     <a href="pen.php?id='+fhOpt.fqlFarmId+'" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Raptor Pen</div></div></div></a>\
@@ -72,6 +76,7 @@ function buildFarmLinks(imgArrow) {
     if(fhOpt.fqlFishing) { fqlBuild += fqlFishing; }
     if(fhOpt.fqlExplore) { fqlBuild += fqlExplore; }
     if(fhOpt.fqlQuests) { fqlBuild += fqlQuests; }
+    if(fhOpt.fqlTower) { fqlBuild += fqlTower; }
     if(fhOpt.fqlRaptor) { fqlBuild += fqlRaptor; }
     fqlBuild += menuFqlBottom;
 
