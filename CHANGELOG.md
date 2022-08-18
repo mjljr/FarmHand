@@ -13,8 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The Vault quick link
 - Exchange Center quick link
 - Borgen's Camp quick link
+- Wheel of Borgen
 
 ### Changed
+- Order of html to match FarmRPG
 
 ### Fixed
 
