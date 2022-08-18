@@ -15,6 +15,7 @@ function save_options() {
     var tqlStore = document.getElementById('tqlStore').checked;
     var tqlMarket = document.getElementById('tqlMarket').checked;
     var tqlBorgen = document.getElementById('tqlBorgen').checked;
+    var tqlWheel = document.getElementById('tqlWheel').checked;
     var tqlBank = document.getElementById('tqlBank').checked;
     var tqlVault = document.getElementById('tqlVault').checked;
     var tqlSteakMarket = document.getElementById('tqlSteakMarket').checked;
@@ -42,6 +43,7 @@ function save_options() {
         tqlStore: tqlStore,
         tqlMarket: tqlMarket,
         tqlBorgen: tqlBorgen,
+        tqlWheel: tqlWheel,
         tqlBank: tqlBank,
         tqlVault: tqlVault,
         tqlSteakMarket: tqlSteakMarket,
@@ -80,6 +82,7 @@ function restore_options() {
         tqlStore: true,
         tqlMarket: true,
         tqlBorgen: false,
+        tqlWheel: false,
         tqlBank: true,
         tqlVault: false,
         tqlSteakMarket: true,
@@ -106,6 +109,7 @@ function restore_options() {
         document.getElementById('tqlStore').checked = items.tqlStore;
         document.getElementById('tqlMarket').checked = items.tqlMarket;
         document.getElementById('tqlBorgen').checked = items.tqlBorgen;
+        document.getElementById('tqlWheel').checked = items.tqlWheel;
         document.getElementById('tqlBank').checked = items.tqlBank;
         document.getElementById('tqlVault').checked = items.tqlVault;
         document.getElementById('tqlSteakMarket').checked = items.tqlSteakMarket;

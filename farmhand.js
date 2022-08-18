@@ -100,6 +100,10 @@ function buildTownLinks(imgArrow) {
     '<li>\
     <a href="tent.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Borgen&#39;s Camp</div></div></div></a>\
     </li>';
+    const tqlWheel =
+    '<li>\
+    <a href="spin.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Wheel of Borgen</div></div></div></a>\
+    </li>';
     const tqlBank =
     '<li>\
     <a href="bank.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Bank</div></div></div></a>\
@@ -146,6 +150,7 @@ function buildTownLinks(imgArrow) {
     if(fhOpt.tqlStore) { tqlBuild += tqlStore; }
     if(fhOpt.tqlMarket) { tqlBuild += tqlMarket; }
     if(fhOpt.tqlBorgen) { tqlBuild += tqlBorgen; }
+    if(fhOpt.tqlWheel) { tqlBuild += tqlWheel; }
     if(fhOpt.tqlBank) { tqlBuild += tqlBank; }
     if(fhOpt.tqlVault) { tqlBuild += tqlVault; }
     if(fhOpt.tqlSteakMarket) { tqlBuild += tqlSteakMarket; }
