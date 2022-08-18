@@ -136,6 +136,14 @@ function buildTownLinks(imgArrow) {
     '<li>\
     <a href="crack.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">The Vault</div></div></div></a>\
     </li>';
+    const tqlExchange = 
+    '<li>\
+    <a href="exchange.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Exchange Center</div></div></div></a>\
+    </li>';
+    const tqlBorgen = 
+    '<li>\
+    <a href="tent.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Borgen&#39;s Camp</div></div></div></a>\
+    </li>';
     
     // Build Town quick links menu
     tqlBuild += menuTqlTop;
@@ -149,7 +157,9 @@ function buildTownLinks(imgArrow) {
     if(fhOpt.tqlWell) { tqlBuild += tqlWell; }
     if(fhOpt.tqlCommunity) { tqlBuild += tqlCommunity; }
     if(fhOpt.tqlLocksmith) { tqlBuild += tqlLocksmith; }
-    if (fhOpt.tqlVault) { tqlBuild += tqlVault; }
+    if(fhOpt.tqlVault) { tqlBuild += tqlVault; }
+    if(fhOpt.tqlExchange) { tqlBuild += tqlExchange; }
+    if(fhOpt.tqlBorgen) { tqlBuild += tqlBorgen; }
 
     tqlBuild += menuTqlBottom;
 

@@ -24,6 +24,8 @@ function save_options() {
     var tqlCommunity = document.getElementById('tqlCommunity').checked;
     var tqlLocksmith = document.getElementById('tqlLocksmith').checked;
     var tqlVault = document.getElementById('tqlVault').checked;
+    var tqlExchange = document.getElementById('tqlExchange').checked;
+    var tqlBorgen = document.getElementById('tqlBorgen').checked;
     chrome.storage.sync.set({
         // Chat settings
         chatUsername: chatUsername,
@@ -49,7 +51,9 @@ function save_options() {
         tqlWell: tqlWell,
         tqlCommunity: tqlCommunity,
         tqlLocksmith: tqlLocksmith,
-        tqlVault: tqlVault
+        tqlVault: tqlVault,
+        tqlExchange: tqlExchange,
+        tqlBorgen: tqlBorgen
     }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
@@ -86,7 +90,9 @@ function restore_options() {
         tqlWell: true,
         tqlCommunity: false,
         tqlLocksmith: false,
-        tqlVault: false
+        tqlVault: false,
+        tqlExchange: false,
+        tqlBorgen: false
     }, function(items) {
         document.getElementById('chatUsername').value = items.chatUsername;
         document.getElementById('chatColor').value = items.chatColor;
@@ -110,6 +116,8 @@ function restore_options() {
         document.getElementById('tqlCommunity').checked = items.tqlCommunity;
         document.getElementById('tqlLocksmith').checked = items.tqlLocksmith;
         document.getElementById('tqlVault').checked = items.tqlVault;
+        document.getElementById('tqlExchange').checked = items.tqlExchange;
+        document.getElementById('tqlBorgen').checked = items.tqlBorgen;
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
