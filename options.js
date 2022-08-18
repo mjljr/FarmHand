@@ -22,6 +22,7 @@ function save_options() {
     var tqlSteakMarket = document.getElementById('tqlSteakMarket').checked;
     var tqlWell = document.getElementById('tqlWell').checked;
     var tqlCommunity = document.getElementById('tqlCommunity').checked;
+    var tqlLocksmith = document.getElementById('tqlLocksmith').checked;
     chrome.storage.sync.set({
         // Chat settings
         chatUsername: chatUsername,
@@ -45,7 +46,8 @@ function save_options() {
         tqlPostOffice: tqlPostOffice,
         tqlSteakMarket: tqlSteakMarket,
         tqlWell: tqlWell,
-        tqlCommunity: tqlCommunity
+        tqlCommunity: tqlCommunity,
+        tqlLocksmith: tqlLocksmith
     }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
@@ -80,7 +82,8 @@ function restore_options() {
         tqlPostOffice: true,
         tqlSteakMarket: true,
         tqlWell: true,
-        tqlCommunity: false
+        tqlCommunity: false,
+        tqlLocksmith: false
     }, function(items) {
         document.getElementById('chatUsername').value = items.chatUsername;
         document.getElementById('chatColor').value = items.chatColor;
@@ -102,6 +105,7 @@ function restore_options() {
         document.getElementById('tqlSteakMarket').checked = items.tqlSteakMarket;
         document.getElementById('tqlWell').checked = items.tqlWell;
         document.getElementById('tqlCommunity').checked = items.tqlCommunity;
+        document.getElementById('tqlLocksmith').checked = items.tqlLocksmith;
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
