@@ -6,6 +6,7 @@ function save_options() {
 
     var fqlFarmId = document.getElementById('fqlFarmId').value;
     var fqlFarm = document.getElementById('fqlFarm').checked;
+    var fqlRaptor = document.getElementById('fqlRaptor').checked;
     var fqlExplore = document.getElementById('fqlExplore').checked;
     var fqlFishing = document.getElementById('fqlFishing').checked;
     var fqlQuests = document.getElementById('fqlQuests').checked;
@@ -29,6 +30,7 @@ function save_options() {
         // Farm quick links settings
         fqlFarmId: fqlFarmId,
         fqlFarm: fqlFarm,
+        fqlRaptor: fqlRaptor,
         fqlExplore: fqlExplore,
         fqlFishing: fqlFishing,
         fqlQuests: fqlQuests,
@@ -64,6 +66,7 @@ function restore_options() {
         chatNotif: false,
         fqlFarmId: '0',
         fqlFarm: false,
+        fqlRaptor: false,
         fqlExplore: true,
         fqlFishing: true,
         fqlQuests: false,
@@ -84,6 +87,7 @@ function restore_options() {
         document.getElementById('chatNotif').checked = items.chatNotif;
         document.getElementById('fqlFarmId').value = items.fqlFarmId;
         document.getElementById('fqlFarm').checked = items.fqlFarm;
+        document.getElementById('fqlRaptor').checked = items.fqlRaptor;
         document.getElementById('fqlExplore').checked = items.fqlExplore;
         document.getElementById('fqlFishing').checked = items.fqlFishing;
         document.getElementById('fqlQuests').checked = items.fqlQuests;
