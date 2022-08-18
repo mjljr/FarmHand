@@ -60,6 +60,10 @@ function buildFarmLinks(imgArrow) {
     '<li>\
     <a href="workshop.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Workshop</div></div></div></a>\
     </li>';
+    const fqlCraftworks = 
+    '<li>\
+    <a href="craftworks.php" data-view=".view-main" class="item-link close-panel"><div class="item-content"><div class="item-inner"><div class="item-title">Craftworks</div></div></div></a>\
+    </li>';
 
     // Build Farm quick links menu
     fqlBuild += menuFqlTop;
@@ -68,6 +72,7 @@ function buildFarmLinks(imgArrow) {
     if(fhOpt.fqlFishing) { fqlBuild += fqlFishing; }
     if(fhOpt.fqlQuests) { fqlBuild += fqlQuests; }
     if(fhOpt.fqlWorkshop) { fqlBuild += fqlWorkshop; }
+    if(fhOpt.fqlCraftworks) { fqlBuild +=fqlCraftworks }
     fqlBuild += menuFqlBottom;
 
     return fqlBuild;

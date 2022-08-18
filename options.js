@@ -10,6 +10,7 @@ function save_options() {
     var fqlFishing = document.getElementById('fqlFishing').checked;
     var fqlQuests = document.getElementById('fqlQuests').checked;
     var fqlWorkshop = document.getElementById('fqlWorkshop').checked;
+    var fqlCraftworks = document.getElementById('fqlCraftworks').checked;
 
     var tqlBank = document.getElementById('tqlBank').checked;
     var tqlStore = document.getElementById('tqlStore').checked;
@@ -32,6 +33,7 @@ function save_options() {
         fqlFishing: fqlFishing,
         fqlQuests: fqlQuests,
         fqlWorkshop: fqlWorkshop,
+        fqlCraftworks: fqlCraftworks,
         // Town quick links settings
         tqlBank: tqlBank,
         tqlStore: tqlStore,
@@ -66,6 +68,7 @@ function restore_options() {
         fqlFishing: true,
         fqlQuests: false,
         fqlWorkshop: true,
+        fqlCraftworks: false,
         tqlBank: true,
         tqlStore: true,
         tqlMarket: true,
@@ -85,6 +88,7 @@ function restore_options() {
         document.getElementById('fqlFishing').checked = items.fqlFishing;
         document.getElementById('fqlQuests').checked = items.fqlQuests;
         document.getElementById('fqlWorkshop').checked = items.fqlWorkshop;
+        document.getElementById('fqlCraftworks').checked = items.fqlCraftworks;
         document.getElementById('tqlBank').checked = items.tqlBank;
         document.getElementById('tqlStore').checked = items.tqlStore;
         document.getElementById('tqlMarket').checked = items.tqlMarket;
