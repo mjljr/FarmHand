@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.5.0] - 2022-08-17
+
+### Added
+- Craftworks quick link
+- Raptor pen quick link
+- Locksmith quick link
+- The Vault quick link
+- Exchange Center quick link
+- Borgen's Camp quick link
+- Wheel of Borgen quick link
+- The Tower quick link
+
+### Changed
+- Order of html to match FarmRPG
+
+### Fixed
+
 ## [1.4.0] - 2021-12-07
 
 FarmHand is now live on the Chrome Web Store and Edge Add-ons!
